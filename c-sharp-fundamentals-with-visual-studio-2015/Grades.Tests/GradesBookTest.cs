@@ -10,6 +10,7 @@ namespace Grades.Tests
         public void TestName()
         {
             GradesBook gb = new GradesBook();
+            gb.Name = "XYZ";
             gb.Name = "ABC";
             Assert.AreEqual(gb.Name, "ABC");
         }

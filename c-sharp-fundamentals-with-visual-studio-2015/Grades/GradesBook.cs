@@ -10,6 +10,24 @@ namespace Grades
     {
         private string _name = string.Empty;
 
+        private NameChangedDelegate NameChanged;
+
+        public GradesBook()
+        {
+            NameChanged += new NameChangedDelegate(OnNameChanged);
+            NameChanged += new NameChangedDelegate(OnNameChanged2);
+            //NameChanged = null;
+        }
+
+        public void OnNameChanged(string existingName, string newName)
+        {
+            Console.WriteLine($"Name Changed from {existingName} to {newName}.");
+        }
+        public void OnNameChanged2(string existingName, string newName)
+        {
+            Console.WriteLine("**");
+        }
+
         public string Name {
             get
             {
@@ -19,6 +37,10 @@ namespace Grades
             {
                 if(!String.IsNullOrEmpty(value))
                 {
+                    if(!_name.Equals(value))
+                    {
+                        NameChanged(_name, value);
+                    }
                     _name = value;
                 }
             }
