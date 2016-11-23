@@ -46,5 +46,13 @@ namespace Grades.Tests
             Shape shape = new Box();
             shape.Draw();
         }
+
+        [TestMethod]
+        public void Test01()
+        {
+            int num = 20;
+            string result = num > 20 ? "yes" : "no";
+            Assert.AreEqual("no", result);
+        }
     }
 }
