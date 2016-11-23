@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Diagnostics;
 using static Grades.Polymorphism;
 using static Grades.Abstract;
+using Grades;
 
 namespace Grades.Tests
 {
@@ -61,6 +62,13 @@ namespace Grades.Tests
         {
             Window win = new Frame("New");
             
+        }
+
+        [TestMethod]
+        public void InterfaceTest()
+        {
+            IWindow win = new Frame("New");
+            win.Title = "ABC";
         }
     }
 }
