@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Diagnostics;
 using static Grades.Polymorphism;
+using static Grades.Abstract;
 
 namespace Grades.Tests
 {
@@ -53,6 +54,13 @@ namespace Grades.Tests
             int num = 20;
             string result = num > 20 ? "yes" : "no";
             Assert.AreEqual("no", result);
+        }
+
+        [TestMethod]
+        public void AbstractTest()
+        {
+            Window win = new Frame("New");
+            
         }
     }
 }
