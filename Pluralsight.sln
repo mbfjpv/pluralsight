@@ -1,13 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test-solution-structure", "test-solution-structure", "{48E21143-0960-47E8-BF81-F2066EFC0481}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.ClassLibrary", "test-solution-structure\Test.ClassLibrary\Test.ClassLibrary.csproj", "{FB9C578C-5BDB-4921-9EC9-9918E6C68AEC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.ConsoleApplication", "test-solution-structure\Test.ConsoleApplication\Test.ConsoleApplication.csproj", "{C1D07F57-7996-4FBB-8BB3-3CF721D7BDDC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "c-sharp-fundamentals-with-visual-studio-2015", "c-sharp-fundamentals-with-visual-studio-2015", "{C8CB35E7-DAEF-4B94-B07B-31A2141727AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grades", "c-sharp-fundamentals-with-visual-studio-2015\Grades\Grades.csproj", "{DEBA1CD5-74AB-4A74-BFA6-C5D5C66F71DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grades.Tests", "c-sharp-fundamentals-with-visual-studio-2015\Grades.Tests\Grades.Tests.csproj", "{6C4966E0-67E4-43E4-AAB1-2818E601A3EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +29,14 @@ Global
 		{C1D07F57-7996-4FBB-8BB3-3CF721D7BDDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1D07F57-7996-4FBB-8BB3-3CF721D7BDDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1D07F57-7996-4FBB-8BB3-3CF721D7BDDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEBA1CD5-74AB-4A74-BFA6-C5D5C66F71DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEBA1CD5-74AB-4A74-BFA6-C5D5C66F71DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEBA1CD5-74AB-4A74-BFA6-C5D5C66F71DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEBA1CD5-74AB-4A74-BFA6-C5D5C66F71DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C4966E0-67E4-43E4-AAB1-2818E601A3EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C4966E0-67E4-43E4-AAB1-2818E601A3EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C4966E0-67E4-43E4-AAB1-2818E601A3EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C4966E0-67E4-43E4-AAB1-2818E601A3EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,5 +44,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{FB9C578C-5BDB-4921-9EC9-9918E6C68AEC} = {48E21143-0960-47E8-BF81-F2066EFC0481}
 		{C1D07F57-7996-4FBB-8BB3-3CF721D7BDDC} = {48E21143-0960-47E8-BF81-F2066EFC0481}
+		{DEBA1CD5-74AB-4A74-BFA6-C5D5C66F71DA} = {C8CB35E7-DAEF-4B94-B07B-31A2141727AE}
+		{6C4966E0-67E4-43E4-AAB1-2818E601A3EB} = {C8CB35E7-DAEF-4B94-B07B-31A2141727AE}
 	EndGlobalSection
 EndGlobal
