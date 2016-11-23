@@ -43,6 +43,7 @@
     <Compile Include="CommentsChangedEventArgs.cs" />
     <Compile Include="GradesBook.cs" />
     <Compile Include="NameChangedDelegate.cs" />
+    <Compile Include="Polymorphism.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

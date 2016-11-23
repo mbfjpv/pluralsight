@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Diagnostics;
+using static Grades.Polymorphism;
 
 namespace Grades.Tests
 {
@@ -37,6 +38,13 @@ namespace Grades.Tests
         private void Gb_CommentsChanged(object sender, CommentsChangedEventArgs eventArgs)
         {
             Trace.WriteLine("Gb_CommentsChanged");
+        }
+
+        [TestMethod]
+        public void TestPolymorphism()
+        {
+            Shape shape = new Box();
+            shape.Draw();
         }
     }
 }
