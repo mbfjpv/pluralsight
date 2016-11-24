@@ -43,6 +43,7 @@
     <Compile Include="Abstract.cs" />
     <Compile Include="CommentsChangedEventArgs.cs" />
     <Compile Include="GradesBook.cs" />
+    <Compile Include="IEnumerableForEach.cs" />
     <Compile Include="WindowInterface.cs" />
     <Compile Include="NameChangedDelegate.cs" />
     <Compile Include="Polymorphism.cs" />

@@ -70,5 +70,15 @@ namespace Grades.Tests
             IWindow win = new Frame("New");
             win.Title = "ABC";
         }
+
+        [TestMethod]
+        public void IEnumerableForEachTest()
+        {
+            IEnumerableForEach list = new IEnumerableForEach();
+            foreach (int x in list)
+            {
+                Trace.WriteLine(x);
+            }
+        }
     }
 }
