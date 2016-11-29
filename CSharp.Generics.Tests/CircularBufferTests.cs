@@ -42,7 +42,7 @@ namespace CSharp.Generics.Tests
         [TestMethod]
         public void Overwrites_When_More_Than_Capacity()
         {
-            ICircularBuffer<double> buffer = new CircularBuffer<double>(capacity: 3);
+            var buffer = new CircularBuffer<double>(capacity: 3);
             var values = new[] { 1.0, 2.0, 3.0, 4.0, 5.0 };
 
             foreach (var value in values)
@@ -55,6 +55,25 @@ namespace CSharp.Generics.Tests
             Assert.AreEqual(values[3], buffer.Read());
             Assert.AreEqual(values[4], buffer.Read());
             Assert.IsTrue(buffer.IsEmpty);
+        }
+
+        [TestMethod]
+        public void ForEach_Through_All_Items()
+        {
+            var buffer = new CircularBuffer<double>(capacity: 3);
+            var values = new[] { 1.0, 2.0, 3.0 };
+            var count = 0;
+
+            foreach (var value in values)
+            {
+                buffer.Write(value);
+            }
+
+            foreach(var item in buffer)
+            {
+                Assert.AreEqual(values[count], item);
+                count++;
+            }
         }
     }
 }

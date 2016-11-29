@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace CSharp.Generics
 {
-    public interface ICircularBuffer<T>
+    public interface IBuffer<T> : IEnumerable<T>
     {
         bool IsEmpty { get; }
-        bool IsFull { get; }
         void Write(T value);
         T Read();
     }
