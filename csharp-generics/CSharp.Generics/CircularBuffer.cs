@@ -2,7 +2,7 @@
 
 namespace CSharp.Generics
 {
-    public class CircularBuffer<T>
+    public class CircularBuffer<T> : ICircularBuffer<T>
     {
         private T[] _buffer;
         private int _start;
