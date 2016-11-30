@@ -11,5 +11,6 @@ namespace CSharp.Generics
         bool IsEmpty { get; }
         void Write(T value);
         T Read();
+        IEnumerable<TOutput> AsIEnumerableOf<TOutput>();
     }
 }

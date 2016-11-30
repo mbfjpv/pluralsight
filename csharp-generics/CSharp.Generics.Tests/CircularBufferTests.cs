@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSharp.Generics;
+using System.Diagnostics;
 
 namespace CSharp.Generics.Tests
 {
@@ -73,6 +74,25 @@ namespace CSharp.Generics.Tests
             {
                 Assert.AreEqual(values[count], item);
                 count++;
+            }
+        }
+
+        [TestMethod]
+        public void Return_A_Specified_Type_Of_IEnumerable()
+        {
+            var buffer = new CircularBuffer<double>(capacity: 3);
+            var values = new[] { 1.2, 2.4, 3.6 };
+
+            foreach (var value in values)
+            {
+                buffer.Write(value);
+                Trace.WriteLine(value);
+            }
+
+            var asInts = buffer.AsIEnumerableOf<int>();
+            foreach(var item in asInts)
+            {
+                Trace.WriteLine(item);
             }
         }
     }
