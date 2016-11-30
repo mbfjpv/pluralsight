@@ -219,5 +219,27 @@ namespace CSharp.Generics.Tests
                 Trace.WriteLine(date);
             }
         }
+
+        [TestMethod]
+        public void ItemDiscared_Event_When_Item_Removes()
+        {
+            var buffer = new CircularBuffer<double>(capacity: 3);
+            var values = new[] { 1.2, 2.4, 3.6, 4.3, 5.5 };
+
+            buffer.ItemDiscarded += Buffer_ItemDiscarded;
+
+            foreach (var value in values)
+            {
+                buffer.Write(value);
+                Trace.WriteLine(value);
+            }
+
+
+        }
+
+        private void Buffer_ItemDiscarded(object sender, CircularBuffer<double>.ItemDiscardedEventArgs<double> e)
+        {
+            Trace.WriteLine($"Old Item {e.ItemDiscarded} New Item {e.NewItem}.");
+        }
     }
 }
