@@ -55,7 +55,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\csharp-generics\CSharp.Generics\CSharp.Generics.csproj">
+    <ProjectReference Include="..\CSharp.Generics\CSharp.Generics.csproj">
       <Project>{c50eea36-3a5f-4e3b-8ae6-4d16865458a9}</Project>
       <Name>CSharp.Generics</Name>
     </ProjectReference>
