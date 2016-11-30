@@ -34,9 +34,23 @@ namespace CSharp.Generics.ConsoleApp
 
         }
 
+        class DepartmentCollection : SortedDictionary<string, SortedSet<Employee>>
+        {
+            public DepartmentCollection Add(string departmentName, Employee employee)
+            {
+                if(!ContainsKey(departmentName))
+                {
+                    Add(departmentName, new SortedSet<Employee>(new EmployeeComparer()));
+                }
+                this[departmentName].Add(employee);
+                return this;
+            }
+        }
+
         static void Main(string[] args)
         {
-            EmployeeTest1();
+            //EmployeeTest1();
+            EmployeeTest2();
         }
 
         private static void EmployeeTest1()
@@ -57,6 +71,29 @@ namespace CSharp.Generics.ConsoleApp
             {
                 Console.WriteLine(department.Key);
                 foreach(var employee in department.Value)
+                {
+                    Console.WriteLine("\t" + employee.Name);
+                }
+            }
+            Console.ReadLine();
+        }
+
+        private static void EmployeeTest2()
+        {
+            var departments = new DepartmentCollection();
+
+            departments.Add("Sales", new Employee { Name = "Scott" })
+                        .Add("Sales",new Employee { Name = "Dani" })
+                        .Add("Sales",new Employee { Name = "Dani" });
+            departments.Add("Engineering", new Employee { Name = "Scott" })
+                        .Add("Engineering", new Employee { Name = "Alex" })
+                        .Add("Engineering", new Employee { Name = "Dani" });
+
+
+            foreach (var department in departments)
+            {
+                Console.WriteLine(department.Key);
+                foreach (var employee in department.Value)
                 {
                     Console.WriteLine("\t" + employee.Name);
                 }
