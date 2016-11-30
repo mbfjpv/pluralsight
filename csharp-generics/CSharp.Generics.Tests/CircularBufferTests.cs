@@ -134,5 +134,69 @@ namespace CSharp.Generics.Tests
         {
             Trace.WriteLine(data);
         }
+
+        [TestMethod]
+        public void Print_Buffer_Using_Anonymous_Action_Method()
+        {
+            var buffer = new CircularBuffer<double>(capacity: 3);
+            var values = new[] { 1.2, 2.4, 3.6 };
+
+            foreach (var value in values)
+            {
+                buffer.Write(value);
+                Trace.WriteLine(value);
+            }
+
+            Action<double> print = delegate (double data)
+            {
+                Trace.WriteLine(data);
+            };
+
+            buffer.PrintBufferAction(PrintConsole);
+        }
+
+        [TestMethod]
+        public void Print_Buffer_Using_Lamda_Action_Method()
+        {
+            var buffer = new CircularBuffer<double>(capacity: 3);
+            var values = new[] { 1.2, 2.4, 3.6 };
+
+            foreach (var value in values)
+            {
+                buffer.Write(value);
+                Trace.WriteLine(value);
+            }
+
+            Action<double> print = d => Trace.WriteLine(d);
+
+            buffer.PrintBufferAction(PrintConsole);
+        }
+
+        [TestMethod]
+        public void Print_Buffer_Using_Inline_Lamda_Expression_Method()
+        {
+            var buffer = new CircularBuffer<double>(capacity: 3);
+            var values = new[] { 1.2, 2.4, 3.6 };
+
+            foreach (var value in values)
+            {
+                buffer.Write(value);
+                Trace.WriteLine(value);
+            }
+
+            buffer.PrintBufferAction(d => Trace.WriteLine(d));
+        }
+
+        [TestMethod]
+        public void Print_Calculations_Using_Action_Func_Predicate()
+        {
+            Action<bool> print = d => Trace.WriteLine(d);
+            Func<double, double> square = d => d * d;
+            Func<double, double, double> add = (x, y) => x + y;
+            Predicate<double> isLessThanTen = d => d < 10;
+
+            print(isLessThanTen(square(add(3, 5))));
+
+            Trace.WriteLine("Done");        }
     }
 }

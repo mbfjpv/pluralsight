@@ -48,5 +48,13 @@ namespace CSharp.Generics
                 print(item);
             }
         }
+
+        public static void PrintBufferAction<T>(this IBuffer<T> buffer, Action<T> print)
+        {
+            foreach (var item in buffer)
+            {
+                print(item);
+            }
+        }
     }
 }
