@@ -197,6 +197,27 @@ namespace CSharp.Generics.Tests
 
             print(isLessThanTen(square(add(3, 5))));
 
-            Trace.WriteLine("Done");        }
+            Trace.WriteLine("Done");
+        }
+
+        [TestMethod]
+        public void Buffer_DateTime_Converter()
+        {
+            var buffer = new CircularBuffer<double>(capacity: 3);
+            var values = new[] { 1.2, 2.4, 3.6 };
+
+            foreach (var value in values)
+            {
+                buffer.Write(value);
+                Trace.WriteLine(value);
+            }
+
+            var asDates = buffer.Map(d => new DateTime(2010, 1, 1).AddDays(d));
+
+            foreach(var date in asDates)
+            {
+                Trace.WriteLine(date);
+            }
+        }
     }
 }

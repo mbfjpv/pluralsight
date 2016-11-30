@@ -56,5 +56,15 @@ namespace CSharp.Generics
                 print(item);
             }
         }
+
+        public static IEnumerable<TOutput> Map<T, TOutput>
+            (this IBuffer<T> buffer, Converter<T, TOutput> converter)
+        {
+            foreach (var item in buffer)
+            {
+                var result = converter(item);
+                yield return result;
+            }
+        }
     }
 }
