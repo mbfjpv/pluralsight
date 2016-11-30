@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSharp.Generics;
 using System.Diagnostics;
+using static CSharp.Generics.BufferExtentions;
 
 namespace CSharp.Generics.Tests
 {
@@ -89,11 +90,49 @@ namespace CSharp.Generics.Tests
                 Trace.WriteLine(value);
             }
 
-            var asInts = buffer.AsIEnumerableOf<int>();
+            var asInts = buffer.AsIEnumerableOfxtention<double, int>();
             foreach(var item in asInts)
             {
                 Trace.WriteLine(item);
             }
+        }
+
+        [TestMethod]
+        public void Print_Buffer()
+        {
+            var buffer = new CircularBuffer<double>(capacity: 3);
+            var values = new[] { 1.2, 2.4, 3.6 };
+
+            foreach (var value in values)
+            {
+                buffer.Write(value);
+                Trace.WriteLine(value);
+            }
+
+            buffer.PrintBuffer();
+        }
+
+        [TestMethod]
+        public void Print_Using_Delegate()
+        {
+            var buffer = new CircularBuffer<double>(capacity: 3);
+            var values = new[] { 1.2, 2.4, 3.6 };
+
+            foreach (var value in values)
+            {
+                buffer.Write(value);
+                Trace.WriteLine(value);
+            }
+
+            //var consoleOut = new Printer<object>(PrintConsole);
+
+            buffer.PrintBufferDeligate(PrintConsole);
+
+        }
+
+        private void PrintConsole(double data)
+        {
+            Trace.WriteLine(data);
         }
     }
 }
