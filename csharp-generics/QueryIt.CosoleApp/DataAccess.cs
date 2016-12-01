@@ -10,18 +10,22 @@ namespace QueryIt.CosoleApp
     class EmployeeDb : DbContext
     {
         public DbSet<Employee> Employees { get; set; }
-    }   
+    }
 
-    public interface IRepository<T> : IDisposable 
+    public interface IReadOnlyRepository<out T> : IDisposable
+    {
+        T FindById(int id);
+        IQueryable<T> FindAll();
+    }
+
+    public interface IRepository<T> : IReadOnlyRepository<T>, IDisposable
     {
         void Add(T newEntity);
         void Delete(T entity);
-        T FindById(int id);
-        IQueryable<T> FindAll();
         int Commit();
     }
 
-    public class SqlRepository<T> : IRepository<T> where T: class, IEntity
+    public class SqlRepository<T> : IRepository<T> where T : class, IEntity
     {
         DbContext _ctx;
         DbSet<T> _set;

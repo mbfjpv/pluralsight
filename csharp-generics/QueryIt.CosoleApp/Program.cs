@@ -21,8 +21,18 @@ namespace QueryIt.CosoleApp
                 AddEmployees(employeeRepository);
                 CountEmployees(employeeRepository);
                 QueryEmployees(employeeRepository);
+                DumpPeople(employeeRepository);
             }
             Console.ReadLine();
+        }
+
+        private static void DumpPeople(IReadOnlyRepository<Person> employeeRepository)
+        {
+            var employees = employeeRepository.FindAll();
+            foreach(var employee in employees)
+            {
+                Console.WriteLine(employee.Name);
+            }
         }
 
         private static void QueryEmployees(IRepository<Employee> employeeRepository)
