@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Generics.Tests", "cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueryIt.CosoleApp", "csharp-generics\QueryIt.CosoleApp\QueryIt.CosoleApp.csproj", "{FC6C34AC-87A6-4AF8-8FD6-7EAA984AE5F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReflectIt", "csharp-generics\ReflectIt\ReflectIt.csproj", "{02C41603-6161-4ED5-A052-E87CEB507178}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{FC6C34AC-87A6-4AF8-8FD6-7EAA984AE5F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC6C34AC-87A6-4AF8-8FD6-7EAA984AE5F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC6C34AC-87A6-4AF8-8FD6-7EAA984AE5F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02C41603-6161-4ED5-A052-E87CEB507178}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02C41603-6161-4ED5-A052-E87CEB507178}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02C41603-6161-4ED5-A052-E87CEB507178}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02C41603-6161-4ED5-A052-E87CEB507178}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,5 +82,6 @@ Global
 		{237D346A-D4F1-4DE1-B2FD-9E318662A6D1} = {E8ADCE5C-FCE7-497A-996B-91087FF4CF6B}
 		{C1D311C4-D15A-4E60-9AF1-C6AB0F1C90EE} = {E8ADCE5C-FCE7-497A-996B-91087FF4CF6B}
 		{FC6C34AC-87A6-4AF8-8FD6-7EAA984AE5F0} = {E8ADCE5C-FCE7-497A-996B-91087FF4CF6B}
+		{02C41603-6161-4ED5-A052-E87CEB507178} = {E8ADCE5C-FCE7-497A-996B-91087FF4CF6B}
 	EndGlobalSection
 EndGlobal
